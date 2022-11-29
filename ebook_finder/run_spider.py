@@ -1,4 +1,6 @@
-"""Module Docstring"""
+"""
+Creates the Scrapy spider.
+"""
 
 import subprocess
 
@@ -14,12 +16,15 @@ def type_watch(source, value):
 snoop.install(watch_extras=[type_watch])
 
 
-@snoop
+# @snoop
 def run_spider():
-    """"""
+    """
+    We use Subprocess to call the Scrapy
+    command that generates a spider.
+    """
 
     cmd = "scrapy crawl pdf -O results.json"
-    path = "/home/mic/python/ebook_finder/ebook_finder/scrapy/pdfdrive"
+    path = "/home/mic/python/ebook_finder/ebook_finder/scraper/pdfdrive"
     subprocess.run(cmd, cwd=path, shell=True)
 
 
